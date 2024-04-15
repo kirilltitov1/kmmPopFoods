@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.npm.importedPackageDir
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -33,6 +35,7 @@ kotlin {
             implementation(libs.ktor.client.serialization)
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.kotlinx.serialization.core)
             implementation(libs.ktor.client.content.negotiation)
         }
         iosMain.dependencies {

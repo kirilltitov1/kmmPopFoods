@@ -1,10 +1,13 @@
 package com.example.kmmpopfoods.data
 
 import kotlinx.serialization.Serializable
+import com.example.kmmpopfoods.data.*
+import kotlinx.serialization.Contextual
+import com.example.kmmpopfoods.UUIDSerializer
 
 @Serializable
 data class Ingredient(
-    val id: UUID? = null,
+    @Contextual val id: UUID? = null,
     val name: String,
     val fat: Int,
     val protein: Int,
@@ -14,7 +17,7 @@ data class Ingredient(
 
 @Serializable
 data class Recipe(
-    val id: UUID? = null,
+    @Contextual val id: UUID? = null,
     val name: String,
     val instructions: String,
     val description: String,
@@ -27,7 +30,7 @@ data class Recipe(
 
 @Serializable
 data class User(
-    val id: UUID? = null,
+    @Contextual val id: UUID? = null,
     val username: String,
     val passwordHash: String,
     val fullName: String,
@@ -37,15 +40,15 @@ data class User(
 
 @Serializable
 data class RecipeIngredient(
-    val id: UUID? = null,
-    val recipeId: UUID,
-    val ingredientId: UUID
+    @Contextual val id: UUID? = null,
+    @Contextual val recipeId: UUID,
+    @Contextual val ingredientId: UUID
 )
 
 @Serializable
 data class UserRecipe(
-    val id: UUID? = null,
-    val userId: UUID,
-    val recipeId: UUID,
+    @Contextual val id: UUID? = null,
+    @Contextual val userId: UUID,
+    @Contextual val recipeId: UUID,
     val isFavorite: Boolean
 )
