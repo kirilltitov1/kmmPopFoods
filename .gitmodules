@@ -1,0 +1,6 @@
+[submodule "iosApp"]
+	path = iosApp
+	url = git@github.com:popFoods/iosApp.git
+[submodule "androidApp"]
+	path = androidApp
+	url = git@github.com:popFoods/androidApp.git
